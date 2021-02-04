@@ -14,8 +14,8 @@ def get_data():
     HRtrain = pd.read_csv('aug_train.csv')
     # Drop unique identifier, column enrollee_id
     HRtrain = HRtrain.drop(columns='enrollee_id')
-    # fill null in gender with not_identified
-    HRtrain['gender'] = HRtrain.gender.fillna('not_identified')
+    # fill nulls with 'not_identified'
+    HRtrain = HRtrain.fillna('not_identified')
     return HRtrain
 
 def get_test_data():
@@ -26,8 +26,8 @@ def get_test_data():
     HRtest = pd.read_csv('aug_test.csv')
     # Drop unique identifier, column enrollee_id
     HRtest = HRtest.drop(columns='enrollee_id')
-    # fill null in gender with not_identified
-    HRtest['gender'] = HRtest.gender.fillna('not_identified')
+    # fill nulls with 'not_identified'
+    HRtest = HRtest.fillna('not_identified')
     return HRtest
 
 def run():
