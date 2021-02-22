@@ -16,6 +16,8 @@ def get_data():
     HRtrain = HRtrain.drop(columns='enrollee_id')
     # fill nulls with 'not_identified'
     HRtrain = HRtrain.fillna('not_identified')
+    # convert target to int
+    HRtrain['target'] = pd.Series(HRtrain.target, dtype='int32')
     return HRtrain
 
 def get_test_data():
